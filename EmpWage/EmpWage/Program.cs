@@ -7,33 +7,35 @@ namespace EmpWage
         public const int isFullTime = 1;
         public const int isPartTime = 2;
         public const int perHrWage = 20;
+        public const int numOfWorkingDays = 20;
         static void Main(string[] args)
         {
           
-            int empHrs = 0;            
-            int empWage = 0;
-            Random random = new Random();
-            int empCheck = random.Next(0, 3);
-            switch (empCheck)
+            int empHrs = 0, empWage = 0, totalEmpWage = 0;
+            for (int day = 0; day < numOfWorkingDays; day++)
             {
-                case isPartTime:
-                     empHrs = 4;
-                    Console.WriteLine("Employee is Present isPartTime");
-                break;
-                case isFullTime:
-                     empHrs = 8;
-                    Console.WriteLine("Employee is Present isFullTime");
-                break;
 
-                default:
-                    empHrs = 0;
-                    Console.WriteLine("Employee is Absent");
-                break;
+                Random random = new Random();
+                int empCheck = random.Next(0, 3);
+                switch (empCheck)
+                {
+                    case isPartTime:
+                        empHrs = 4;
+                      break;
 
+                    case isFullTime:
+                        empHrs = 8;
+                       break;
 
+                    default:
+                        empHrs = 0;               
+                        break;
+                }
+                empWage = empHrs * perHrWage;
+                totalEmpWage += empWage;
+                Console.WriteLine("Employee Wage =" + empWage);
             }
-            empWage = empHrs * perHrWage;
-            Console.WriteLine("Employee Wage =" +empWage);
+            Console.WriteLine("Total Employee Wage in Month =" + totalEmpWage);
         }
 
     }
