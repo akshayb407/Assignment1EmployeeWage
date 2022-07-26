@@ -8,13 +8,14 @@ namespace EmpWage
         public const int isPartTime = 2;
         public const int perHrWage = 20;
         public const int numOfWorkingDays = 20;
+        public const int maxHrsInMonth = 100;
         static void Main(string[] args)
         {
           
-            int empHrs = 0, empWage = 0, totalEmpWage = 0;
-            for (int day = 0; day < numOfWorkingDays; day++)
+            int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
+            while (totalEmpHrs <= maxHrsInMonth && totalWorkingDays < numOfWorkingDays)
             {
-
+                totalWorkingDays++;
                 Random random = new Random();
                 int empCheck = random.Next(0, 3);
                 switch (empCheck)
@@ -31,10 +32,10 @@ namespace EmpWage
                         empHrs = 0;               
                         break;
                 }
-                empWage = empHrs * perHrWage;
-                totalEmpWage += empWage;
-                Console.WriteLine("Employee Wage =" + empWage);
+                totalEmpHrs += empHrs;
+                Console.WriteLine("Day#:" + totalWorkingDays +"Emp Hrs : "  + empHrs);
             }
+            int totalEmpWage = totalEmpHrs * perHrWage;
             Console.WriteLine("Total Employee Wage in Month =" + totalEmpWage);
         }
 
