@@ -7,8 +7,10 @@ namespace EmpWage
 
         static void Main(string[] args)
         {
-            EmployeeWages employees = new EmployeeWages();
-            employees.EmployeeWage();
+            EmployeeWages employeeWage = new EmployeeWages();
+
+            employeeWage.GetEmployeeWage("reliance", 20, 100, 20);
+            employeeWage.GetEmployeeWage("Tata", 40, 150, 40);
         }
 
 
