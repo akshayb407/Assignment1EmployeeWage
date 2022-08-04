@@ -9,13 +9,11 @@ namespace EmpWage
         {
 
 
-            EmployeeWages reliance = new EmployeeWages("Reliance", 20, 20, 100);
-            reliance.computeEmpWage();
+            EmployeeWages  class1 = new EmployeeWages();
+            class1.addCompanyEmpWage("DMart", 20, 20, 100);
+            class1.addCompanyEmpWage("reliance", 20, 20, 100);
 
-            EmployeeWages Dmart = new EmployeeWages("Dmart", 20, 20, 100);
-            Dmart.computeEmpWage();
-
-
+            class1.ToString();
         }
     }
 }
