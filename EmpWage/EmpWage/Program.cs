@@ -7,12 +7,15 @@ namespace EmpWage
 
         static void Main(string[] args)
         {
-            EmployeeWages employeeWage = new EmployeeWages();
 
-            employeeWage.GetEmployeeWage("reliance", 20, 100, 20);
-            employeeWage.GetEmployeeWage("Tata", 40, 150, 40);
+
+            EmployeeWages reliance = new EmployeeWages("Reliance", 20, 20, 100);
+            reliance.computeEmpWage();
+
+            EmployeeWages Dmart = new EmployeeWages("Dmart", 20, 20, 100);
+            Dmart.computeEmpWage();
+
+
         }
-
-
     }
 }
